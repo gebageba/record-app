@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-02-18
+  memo: MyText
+  subject_id: 1
+  price: 1
+  detail: MyText
+  user_id: 1
+
+two:
+  date: 2021-02-18
+  memo: MyText
+  subject_id: 1
+  price: 1
+  detail: MyText
+  user_id: 1

@@ -1,0 +1,39 @@
+<table class="main">
+  <thead>
+    <tr><h2></h2>
+      <th>日付</th>
+      <th>借方科目</th>
+      <th>摘要</th>
+      <th>借方金額</th>
+      <th>貸方金額</th>
+      <th>残高</th>
+      <th>詳細</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <tr>
+        <td></td>
+        <td>繰越金額</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    <% sum = 0%>
+    <% records = @records.where(subject_id: 18)%>
+    <% records.each.with_index do |record, i| %>
+      <tr>
+        <td><%= record.date %></td>
+        <td><%= record.subject.name %></td>
+        <td><%= record.memo %></td>
+        <td></td>
+        <td><%= record.price %></td>
+        <td><%= sum += records.pluck("price")[i].to_i%></td>
+        <td><%= link_to '詳細', record%>
+        <% end %>
+      </tr>
+  </tbody>
+</table>

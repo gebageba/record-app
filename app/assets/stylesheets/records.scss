@@ -1,3 +1,257 @@
-// Place all the styles related to the records controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /*color*/
+  --table: #3b9ff1;
+  --table-even: #c3f8f4;
+  --notice: green;
+  --error: red;
+  --all-background-color: #f0f0f0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  margin: 33px;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13pt;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11pt;
+}
+
+a {
+  color: #000;
+}
+
+a:visited {
+  color: #666;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+table {
+  width: 80vw;
+  border-top: 1px solid var(--table);
+  border-left: 1px solid var(--table);
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.main-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0;
+}
+
+.main-wrap-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+th {
+  padding-bottom: 5px;
+  border-right: 1px solid var(--table);
+  color: #ffffff;
+  background-color: var(--table);
+  border-bottom: 1px solid var(--table);
+  padding: 0.3em 1em;
+  text-align: center;
+}
+
+td {
+  padding: 0 5px 7px;
+  border-right: 1px solid var(--table);
+  border-bottom: 1px solid var(--table);
+  padding: 0.3em 1em;
+}
+
+tr:nth-child(even) {
+  background: var(--table-even);
+}
+
+td.memo {
+  width: 30%;
+}
+
+div.field,
+div.actions {
+  margin-bottom: 10px;
+}
+
+div.field {
+  margin: 0 0 0 20px;
+}
+
+.form_fixed,
+.form_style,
+.form_login,
+.form_explain {
+  height: 28px;
+  width: 7em;
+  transition: all 0.6s ease;
+  border-bottom: 1px solid #cccccc;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-radius: 14px;
+}
+
+.form_explain {
+  min-width: 120%;
+}
+
+.form_style {
+  width: 100%;
+}
+
+.form_fixed {
+  width: 100%;
+}
+
+.form_login {
+  width: 20em;
+}
+
+form {
+  display: flex;
+}
+
+.form_action {
+  margin: 10px 0 0 13px;
+  display: inline-block;
+  font-size: 10pt;
+  text-align: center;
+  line-height: 1em;
+  cursor: pointer;
+  padding: 12px 12px;
+  background: var(--table);
+  color: #ffffff;
+  transition: 0.3s; /* なめらか変化 */
+  border: 2px solid var(--table);
+  border-radius: 14%;
+}
+
+.form_action:hover {
+  color: var(--table);
+  background: #ffffff;
+}
+
+#notice {
+  color: var(--notice);
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: var(--error);
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid var(--error);
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+label {
+  display: block;
+}
+
+.right {
+  background-color: #ffffff;
+}
+.left {
+  background-color: var(--table-even);
+}
+
+.excel-link {
+  color: var(--error);
+}
+
+/*総勘定元帳*/
+
+.mototyo {
+  margin: 20px;
+}
+
+.content {
+  margin: 40px 20px 20px;
+}
+
+.tab-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.tab-label {
+  color: black;
+  background: var(--table-even);
+  margin: 3px 5px;
+  padding: 3px 12px;
+  order: -1;
+}
+.tab-content {
+  width: 100%;
+  display: none;
+  margin-top: 5%;
+}
+.tab-switch:checked + .tab-label {
+  background: var(--table);
+}
+.tab-switch:checked + .tab-label + .tab-content {
+  display: block;
+}
+.tab-switch {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+}

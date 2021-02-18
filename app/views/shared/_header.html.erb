@@ -1,0 +1,75 @@
+<html>
+
+<body class="menu">
+    <header>    
+        
+        <!-- ナビメニュー -->
+        <nav id="nav">
+            <ul>
+                <li><%= link_to '入力(出力可)', new_record_path %></li>
+                <li><%= link_to '現金出納帳', records_path %></li>
+                <li><%= link_to '経費帳', expence_records_path %></li>
+                <li><%= link_to '仕訳帳', shiwaketyo_records_path %></li>
+                <li><%= link_to '総勘定元帳', mototyo_records_path %></li>
+                <li><%= link_to '試算表', trial_records_path %></li>
+                <li><%= link_to '損益計算書', pl_records_path %></li>
+                <li><%= link_to '貸借対照表', bs_records_path %></li>
+            </ul>
+        </nav>
+
+        <!-- ハンバーガーメニューのアイコン -->
+        <div id="hamburger">
+            <!-- 線1 -->
+            <span class="inner_line" id="line1"></span>
+            <!-- 線2 -->
+            <span class="inner_line" id="line2"></span>
+            <!-- 線3 -->
+            <span class="inner_line" id="line3"></span>
+        </div>
+        <div class="subject"><%= title%></div>
+        <div class="sub"><%= title%></div>
+
+
+
+
+        <div id="menu">
+            <%# <div class="logo">
+                <a href="/">ロゴ</a>
+            </div> %>
+            <div class="link-header">
+                <ul id="nav-header">
+                    <% if user_signed_in?%>
+                        <li id="email"><%= current_user.email%></li>
+                        <div id="login" style="color:#ff0000;">
+                            <button class="form_explain" type="button">
+                                <li>
+                                    <%= link_to "ログアウト", destroy_user_session_path, :method => :delete%>
+                                </li>
+                            </button>
+                            <button class="form_explain" type="button">
+                                <li>
+                                    <%= link_to "アプリの説明", "/"%>
+                                </li>
+                            </button>
+                        </div>
+                    <% else %>
+                        <button class="form_explain" type="button"  style="width:10%">
+                        <li>
+                            <%= link_to "ログイン", new_user_session_path%>
+                        </li>
+                        </button>
+                    <% end %>
+                </ul>
+            </div>     
+        </div>
+
+
+        
+
+
+
+
+
+    </header>
+        <div class="space"></div>
+</body>

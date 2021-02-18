@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   root to: "records#index"
   resources :records do
     collection do
-      get 'whole' 
-      get 'suitotyo' 
+      get 'expence' 
       get 'shiwaketyo' 
       get 'mototyo' 
       get 'trial' 

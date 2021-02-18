@@ -1,1 +1,46 @@
-<p>こんにちは</p>
+<%= render partial: "shared/header", locals: { title: @title }%>
+
+<div class="main-wrap">
+ <table class="main">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Memo</th>
+      <th>Subject</th>
+      <th>収入</th>
+      <th>支出</th>
+      <th>残高</th>
+      <th>詳細</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% sum = 0%>
+      <% @records.each.with_index do |record, i| %>
+        <tr>
+          <td><%= record.date %></td>
+          <td><%= record.memo %></td>
+          <td><%= record.subject.name %></td>
+          <td><% if record.subject_id >= 100%>
+                <%= record.price %></td>
+              <%end%>
+          </td>
+          <td><% if record.subject_id < 100%>
+                <%= record.price %></td>
+              <%end%>
+          </td>
+          <td><% if record.subject_id >= 100%>
+                  <%= sum += (@records.pluck("price")[i]).to_i%></td>
+              <% else %>
+                  <%= sum -= (@records.pluck("price")[i]).to_i%></td>
+              <% end%>
+
+          <td><%= link_to '詳細', record%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</table>
+
+</div>

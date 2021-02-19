@@ -9,7 +9,7 @@ class Record < ApplicationRecord
  end
 
 scope :sorted, -> { order(date: :asc) }
-scope :expense, -> { where(subject_id: [1..99]) }
+scope :expence, -> { where(subject_id: [1..99]) }
 scope :income, -> { where(subject_id: [100..102]) }
 
 end

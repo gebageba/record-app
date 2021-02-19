@@ -16,8 +16,6 @@
 
   <tbody>
     <% sum = 0%>
-    <% @records = Record.all %>
-    <% @price = @records.pluck("price")%>
     <% @records.each.with_index do |record, i| %>
       <tr>
         <td><%= record.date %></td>

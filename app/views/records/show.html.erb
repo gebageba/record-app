@@ -1,1 +1,62 @@
+
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+<table class="main" style="margin:30px">
+    <thead>
+        <tr>
+            <td>
+                <strong>日付:</strong>
+            </td>
+            <td>
+                <strong>摘要:</strong>
+            </td>
+            <td>
+                <strong>勘定科目:</strong>
+            </td>
+            <td>
+                <strong>金額:</strong>
+            </td>
+            <td>
+                <strong>詳細:</strong>
+            </td>
+        </tr>
+
+    </thead>
+
+
+
+    <tbody>
+        <tr>
+            <td>
+                <%= @record.date %>
+            </td>
+            <td>
+                <%= @record.memo %>
+            </td>
+            <td>
+                <%= @record.subject.name %>
+            </td>
+            <td>
+                <%= @record.price %>
+            </td>
+            <td>
+                <%= @record.detail %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div style="margin:30px">
+    <%= link_to '編集する', edit_record_path(@record) %> |
+    <%= link_to '入力画面へ', new_record_path %> |
+    <%= link_to '削除', @record, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+</div>
+

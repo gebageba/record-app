@@ -1,13 +1,14 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!, except: [:welcome]
-  # before_action :set_record
-  # before_action :records_all, only: [:index, :shiwaketyo, :mototyo]
-  # before_action :records_sum, only: [:trial, :pl, :bs]
+  before_action :base, except: [:welcome]
+  before_action :set_record, only: %i[ show edit update destroy ]
+  before_action :records_expence, only: [:new, :expence]
+  before_action :records_all, only: [:index, :shiwaketyo, :mototyo]
+  before_action :records_sum, only: [:trial, :pl, :bs]
 
 
   def index
     @title = "現金出納帳"
-    @records = current_user.records.all.sorted
   end
 
   def show
@@ -18,9 +19,9 @@ class RecordsController < ApplicationController
 
   def new
     @title = "入力"
-    @records = current_user.records.expense.sorted
-    @records_income = current_user.records.income.sorted
-    @record = Record.new
+    @record = base.new
+    @records = base.expence.sorted
+    @records_income = base.income.sorted
   end
 
   def edit
@@ -29,44 +30,30 @@ class RecordsController < ApplicationController
   
   def expence
     @title = "経費帳"
-    @records = Record.all
     @price = @records.pluck("price")
   end
   
   def shiwaketyo
     @title = "仕訳帳"
-    @records = current_user.records.all.sorted
     @price = @records.pluck("price")
   end
 
   def mototyo
     @title = "総勘定元帳"
-    @records = current_user.records.all.sorted
+    @records = base.sorted
   end
 
   def trial
-    base = current_user.records
-    @records = base.group("subject_id").select(:subject_id).sum(:price)
-    @sum_income = base.income.sum(:price)
-    @expence = base.expense.sum(:price)
     @title = "試算表"
     @cash = @sum_income-@expence
   end
 
   def pl
-    base = current_user.records
-    @records = base.group("subject_id").select(:subject_id).sum(:price)
-    @sum_income = base.income.sum(:price)
-    @expence = base.expense.sum(:price)
-    @pl = @records[100].to_i-@expence
     @title = "損益計算書"
+    @pl = @records[100].to_i-@expence
   end
 
   def bs
-    base = current_user.records
-    @records = base.group("subject_id").select(:subject_id).sum(:price)
-    @sum_income = base.income.sum(:price)
-    @expence = base.expense.sum(:price)
     @cash = @sum_income-@expence
     @pl = @records[100].to_i-@expence
     @asset = @records[18].to_i + @cash
@@ -76,7 +63,7 @@ class RecordsController < ApplicationController
 
 
   def create
-    @record = Record.new(params.require(:record).permit(:date, :memo, :subject_id, :price, :detail).merge(user_id: current_user.id))
+    @record = Record.new(record_params)
     @record.user_id = current_user.id
 
       if @record.save
@@ -84,46 +71,50 @@ class RecordsController < ApplicationController
       else
         render new_record
       end
-    end
   end
 
   def update
     if @record.update(record_params)
       redirect_to new_record_path
       else
-        render new_record
+        render new_record_path
       end
   end
 
   
 
   def destroy
-    if @record.destroy 
-      redirect_to new_record_path, notice: '成功しました'
+    if record.destroy 
+      redirect_to new_record_path, notice: "削除が完了しました"
+    end
   end
 
+  private
 
+  def set_record
+    @record = Record.find(params[:id])
+  end
 
+  def record_params
+    params.require(:record).permit(:date, :memo, :subject_id, :price, :detail).merge(user_id: current_user.id)
+  end
 
-  # private
-
-  # def set_record
-  #   @record = Record.find(params[:id])
-  # end
-
-  # def record_params
-  #   params.require(:record).permit(:date, :memo, :subject_id, :price, :detail).merge(user_id: current_user.id)
-  # end
+  def records_expence
+    @records = base.expence.sorted
+  end
   
-  # def records_all
-  #   @records = current_user.records.all.sorted
-  # end
+  def records_all
+    @records = current_user.records.all.sorted
+  end
   
-  # def records_sum
-  #   base = current_user.records
-  #   @records = base.group("subject_id").select(:subject_id).sum(:price)
-  #   @sum_income = base.income.sum(:price)
-  #   @expence = base.expense.sum(:price)
-  # end
+  def records_sum
+    @records = base.group("subject_id").select(:subject_id).sum(:price)
+    @sum_income = base.income.sum(:price)
+    @expence = base.expence.sum(:price)
+  end
+
+  def base
+    base = current_user.records
+  end
 
 end

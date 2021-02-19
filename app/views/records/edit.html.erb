@@ -1,1 +1,11 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+
+<div style="margin:30px">
+<%= render 'form', record: @record %>
+
+<%= link_to '確認する', @record %> |
+<%= link_to '入力画面へ', new_record_path %> |
+<%= link_to '削除', @record, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+</div>

@@ -29,7 +29,8 @@
 
 ## 環境
 
-- Rails v6.1.1
+- Rails v6.1.3
+- Ruby v2.6.3
 - MySQL v8.0.23
 - Homebrew v2.7.6
 - npm v6.14.11

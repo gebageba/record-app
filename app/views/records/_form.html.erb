@@ -12,8 +12,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo, {class: 'form_style'} %>
+    <%= form.label :subject %>
+    <%= form.collection_select :subject_id, Subject.all, :id, :name, {},{class: 'form_fixed'} %>
   </div>
 
   <div class="field">

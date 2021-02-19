@@ -1,25 +1,41 @@
-# README
+# 確定申告用　帳簿作成アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリは、フリーランスのための確定申告用の帳簿を作成するアプリです。
 
-Things you may want to cover:
+## 概要
 
-* Ruby version
+売上や経費を入力すると、現金出納帳、経費帳、仕訳帳、総勘定元帳、損益計算書、貸借対照表を自動で作成してくれます。  
+開業一年目の方や副業などで収入があるけど、どのように確定申告の帳簿を作ったら良いかわからないという方におすすめです。  
+エクセルで経費を管理している方も多いと思います。  
+エクセル風の表で表示されるところが特徴です。まるでエクセルで管理しているようで、親しみやすいかと思います。
 
-* System dependencies
+確定申告が手軽にできるものになりますように！
 
-* Configuration
+### 想定している人
 
-* Database creation
+- 仕入れがない
+- 従業員がいない
+- 売上が 1000 万円以下
+- エンジニア、デザイナーなど
 
-* Database initialization
+## デモ
 
-* How to run the test suite
+![入力画面](https://i.gyazo.com/579f46a9561152d6e64d695de6bff46c.png)
+エクセル出力可能
 
-* Services (job queues, cache servers, search engines, etc.)
+![損益計算書](https://i.gyazo.com/65a70398397d46f941ac5c802ae8d57f.png)
 
-* Deployment instructions
+![貸借対照表](https://i.gyazo.com/722a37ff2b4480f198cc9fe0fc34e2a0.png)
 
-* ...
-# record-app
+## 環境
+
+- Rails v6.1.1
+- MySQL v8.0.23
+- Homebrew v2.7.6
+- npm v6.14.11
+- yarn v1.22.5
+
+## 注意事項
+
+アプリの仕訳は現金のみ対応しています(当座預金はありません)。  
+確定申告は自己責任でお願いします。

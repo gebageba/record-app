@@ -1,1 +1,56 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+<div class="main-wrap">
+<table class="main">
+    <tbody>
+      <tr>
+      <th></th><th>売上①</th><th><%=@records[100]%></th><td  rowspan="15">経費</td><td>消耗品費</td><td><%=@records[6]%></td><td>貸倒金(繰戻)</td><td></td>
+      <tr>
+        <td rowspan="5">売上原価</td><td>期首商品棚卸高</td><td></td><td>減価償却費</td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>仕入金額</td><td></td><td>福利厚生費</td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>小計</td><td></td><td>給料賃金</td><td></td><td>計</td><td>0</td>
+      </tr>
+      <tr>
+        <td>期末商品棚卸高</td><td></td><td>外注工賃</td><td><%=@records[1]%></td><td>専従者給与</td><td></td>
+      </tr>
+      <tr>
+        <td>差引原価(②)</td><td>0</td><td>利子割引料</td><td></td><td>貸倒金(繰入)</td><td></td>
+      </tr>
+      <tr>
+      <th></th><th>差引金額(③=①-②)</th><th><%=@records[100]%></th><td>地代家賃</td><td><%=@records[9]%></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td rowspan="9">経費</td><td>租税公課</td><%=@records[11]%><td></td><td>貸倒金</td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>荷造運賃</td><td><%=@records[10]%></td><td>新聞図書費</td><td><%=@records[15]%></td><td>計</td><td>0</td>
+      </tr>
+      <tr>
+        <td>水道光熱費</td><td><%=@records[8]%></td><td>支払手数料</td><td><%=@records[5]%></td><th>青特控除前所得金額(⑥)</th><th><%=@pl%></th>
+      </tr>
+      <tr>
+        <td>旅費交通費</td><td><%=@records[7]%></td><td>会議費</td><td><%=@records[14]%></td><td>青色申告特別控除(⑦)</td><td>650000</td>
+      </tr>
+      <tr>
+        <td>通信費</td><td><%=@records[3]%></td><td>研修費</td><td><%=@records[16]%></td><th>所得金額(⑧=⑥-⑦)</th><th><%= @pl-650000 >=0 ? @pl-650000 : @pl+0%></th>
+      </tr>
+      <tr>
+        <td>広告宣伝費</td><td><%=@records[4]%></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>接待交際費</td><td><%=@records[2]%></td><td>雑費</td><td><%=@records[17]%></td>
+      </tr><tr>
+        <td>損害保険料</td><td><%=@records[13]%></td><td>計(④)</td><td><%=@expence%></td>
+      </tr><tr>
+        <td>修繕費</td><td><%=@records[12]%></td><th></th><th>差引金額(⑤=③-④)</th><th><%=@pl%></th>
+      </tr>
+      
+
+
+  </tbody>
+</table>
+</div>

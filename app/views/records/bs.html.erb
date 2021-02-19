@@ -1,1 +1,78 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+
+<div class="main-wrap">
+<table class="main">
+  <thead>
+    <tr>
+    <th colspan="3">資産の部</th><th colspan="3">負債の部</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>科目</td><td>期首</td><td>期末</td><td>科目</td><td>期首</td><td>期末</td>
+      </tr>
+      <tr>
+        <td>現金</td><td></td><td><%=@cash%></td><td>支払手形</td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>当座預金</td><td></td><td></td><td>買掛金</td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>定期預金</td><td></td><td></td><td>借入金</td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>その他の預金</td><td></td><td></td><td>未払金</td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>受取手形</td><td></td><td></td><td>前受金</td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>売掛金</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>有価証券</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>棚卸資産</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>前払金</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>貸付金</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>建物</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>建物付属設備</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>機械装置</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>車両</td><td></td><td></td><td></td><td></td><td></td>
+      </tr><tr>
+        <td>車両運搬具</td><td></td><td></td><td>貸倒引当金</td><td></td><td></td>
+      </tr><tr>
+        <td>工具器具備品</td><td></td><td></td><td></td><td></td><td></td>
+      </tr><tr>
+        <td>土地</td><td></td><td></td><td></td><td></td><td></td>
+      </tr><tr>
+        <td>事業主貸</td><td></td><td><%=@records[18]%></td><td>事業主借</td><td></td><td><%=@records[101]%></td>
+      </tr><tr>
+        <td></td><td></td><td></td><td>元入金</td><td></td><td><%=@records[102]%></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td>青特控除前所得金額</td><td></td><td><%=@pl%></td>
+      </tr>
+
+      <tr>
+        <td>合計</td><td>0</td><td><%=@asset%></td><td>合計</td><td>0</td><td><%= @debt%></td>
+      </tr>
+
+  </tbody>
+</table>
+</div>

@@ -1,1 +1,33 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+<div class="main-wrap">
+<table class="main">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>摘要</th>
+      <th>種類</th>
+      <th>支払方法</th>
+      <th>支払金額</th>
+      <th>合計</th>
+      <th>詳細</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% sum = 0%>
+    <% @records.each.with_index do |record, i| %>
+      <tr>
+        <td><%= record.date %></td>
+        <td class="memo"><%= record.memo %></td>
+        <td><%= record.subject.name %></td>
+        <td>現金</td>
+        <td><%= record.price %></td>
+        <td><%= sum += @price[i].to_i%></td>
+        <td><%= link_to '詳細', record%></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+</div>
+

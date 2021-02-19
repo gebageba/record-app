@@ -1,0 +1,33 @@
+<%= form_with(model: record) do |form| %>
+
+<form>
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, {class: 'form_style'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo, {class: 'form_style'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo, {class: 'form_style'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, {class: 'form_fixed'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail, {class: 'form_style'} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "追加", {class: 'form_action'} %>
+  </div>
+<% end %>
+<form>

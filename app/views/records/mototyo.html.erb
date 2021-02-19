@@ -1,1 +1,124 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
+
+<div class = "mototyo">
+<div class = "content">
+<h2>現金</h2>
+<div class="tab-wrap">
+    <input id="TAB01-01" type="radio" name="TAB01" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB01-01">現金</label>
+    <div class="tab-content">
+        <%= render partial: "shared/cash"%>
+    </div>
+    <input id="TAB01-02" type="radio" name="TAB01" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB01-02">非表示</label>
+    <div class="tab-content">
+    </div>
+</div>
+</div>
+
+<div class = "content">
+<h2>収入</h2>
+<div class="tab-wrap">
+    <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">1. 売上</label>
+    <div class="tab-content">
+       <%= render partial: "shared/incomes/i100"%>
+    </div>
+    <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">2. 事業主借</label>
+    <div class="tab-content">
+        <%= render partial: "shared/incomes/i101"%>
+    </div>
+    <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">3. 元入金</label>
+    <div class="tab-content">
+        <%= render partial: "shared/incomes/i102"%>
+    </div>
+    <input id="TAB-04" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-04">非表示</label>
+    <div class="tab-content">
+    </div>
+</div>
+</div>
+
+<div class = "content">
+<h2>支出</h2>
+<div class="tab-wrap">
+    <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB02-01">1. 外注工費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e1"%>
+    </div>
+    <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-02">2. 接待交際費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e2"%>
+    </div>
+    <input id="TAB02-03" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-03">3. 通信費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e3"%>
+    </div>
+    <input id="TAB02-04" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-04">4. 広告宣伝費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e4"%>
+    </div>
+    <input id="TAB02-05" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-05">5. 支払手数料</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e5"%>
+    </div>
+    <input id="TAB02-06" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-06">6. 消耗品費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e6"%>
+    </div>
+    <input id="TAB02-07" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-07">7. 旅費交通費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e7"%>
+    </div>
+    <input id="TAB02-08" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-08">8. 水道光熱費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e8"%>
+    </div>
+    <input id="TAB02-09" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-09">9. 地代家賃</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e9"%>
+    </div>
+    <input id="TAB02-10" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-10">10. 荷造運賃</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e10"%>
+    </div>
+    <input id="TAB02-11" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-11">11. 租税公課</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e11"%>
+    </div>
+    <input id="TAB02-12" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-12">12. 修繕費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e12"%>
+    </div>
+    <input id="TAB02-13" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-13">13. 損害保険料</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e13"%>
+    </div>
+    <input id="TAB02-14" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-14">14. 会議費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e14"%>
+    </div>
+    <input id="TAB02-15" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-15">15. 新聞図書費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e15"%>
+    </div>
+    <input id="TAB02-16" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-16">16. 研修費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e16"%>
+    </div>
+    <input id="TAB02-17" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-17">17. 雑費</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e17"%>
+    </div>
+    <input id="TAB02-18" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-18">18. 事業主貸</label>
+    <div class="tab-content">
+        <%= render partial: "shared/expenses/e18"%>
+    </div>
+    <input id="TAB-02-19" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB-02-19">非表示</label>
+    <div class="tab-content">
+        
+    </div>
+</div>    
+</div>
+</div>
+
+
+
+
+

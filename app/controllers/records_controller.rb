@@ -67,7 +67,7 @@ class RecordsController < ApplicationController
     @record.user_id = current_user.id
 
       if @record.save
-         redirect_to new_record_path
+         redirect_to new_record_path, notice: "追加されました"
       else
         render new_record
       end
@@ -75,7 +75,7 @@ class RecordsController < ApplicationController
 
   def update
     if @record.update(record_params)
-      redirect_to new_record_path
+      redirect_to new_record_path, notice: "更新が完了しました"
       else
         render new_record_path
       end
@@ -84,7 +84,7 @@ class RecordsController < ApplicationController
   
 
   def destroy
-    if record.destroy 
+    if @record.destroy 
       redirect_to new_record_path, notice: "削除が完了しました"
     end
   end

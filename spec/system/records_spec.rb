@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'レコード投稿', type: :system do
@@ -179,8 +181,8 @@ RSpec.describe '他の人のレコードは見れない', type: :system do
     @record1 = FactoryBot.create(:record)
   end
 
-  context '他の人のレコードは見えない' do
-    it '他の人のレコードは見えない' do
+  context '他の人のレコードは見れない' do
+    it '他の人のレコードは見れない' do
       # ログインする
       sign_in(@user1)
       # フォームに情報を入力する

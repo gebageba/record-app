@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecordsController < ApplicationController
   before_action :authenticate_user!, except: [:welcome]
   before_action :base, except: [:welcome]

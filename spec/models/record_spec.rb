@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Record, type: :model do
-  describe "収入・支出新規登録" do
+  describe '収入・支出新規登録' do
     before do
       @record = FactoryBot.build(:record)
     end
@@ -12,15 +12,13 @@ RSpec.describe Record, type: :model do
       end
 
       it 'date, memo, subject_id, price, detailが存在しなくても登録できる' do
-        @record.date = ""
-        @record.memo = ""
-        @record.subject_id = ""
-        @record.price = ""
-        @record.detail = ""
+        @record.date = ''
+        @record.memo = ''
+        @record.subject_id = ''
+        @record.price = ''
+        @record.detail = ''
         expect(@record).to be_valid
       end
     end
-
-    
   end
 end

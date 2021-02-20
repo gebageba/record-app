@@ -3,15 +3,15 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  root to: "records#index"
+  root to: 'records#index'
   resources :records do
     collection do
-      get 'expence' 
-      get 'shiwaketyo' 
-      get 'mototyo' 
-      get 'trial' 
-      get 'pl' 
-      get 'bs' 
+      get 'expence'
+      get 'shiwaketyo'
+      get 'mototyo'
+      get 'trial'
+      get 'pl'
+      get 'bs'
     end
   end
 end

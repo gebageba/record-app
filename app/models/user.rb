@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_many :records, dependent: :destroy
 
   def records
-    return Record.where(user_id: self.id)
+    Record.where(user_id: id)
   end
 end

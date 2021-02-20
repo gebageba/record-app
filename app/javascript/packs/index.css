@@ -87,12 +87,12 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 700px) {
   h1 {
     font-size: 4rem;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 0.5rem;
   }
   h3 {
     font-size: 1.75rem;
@@ -123,7 +123,7 @@ p {
   max-width: var(--max-width);
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
   .section {
     width: 95vw;
   }

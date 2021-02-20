@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 
 gem 'active_hash'
+
+gem 'react-rails'

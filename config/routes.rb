@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-
-  root to: 'records#index'
   resources :records do
     collection do
       get 'expence'
@@ -16,4 +14,6 @@ Rails.application.routes.draw do
       get 'bs'
     end
   end
+  root to: 'records#welcome'
+  get 'records/welcome' => 'records#welcome'
 end

@@ -83,6 +83,8 @@ class RecordsController < ApplicationController
     redirect_to new_record_path, notice: '削除が完了しました' if @record.destroy
   end
 
+  def welcome; end
+
   private
 
   def set_record

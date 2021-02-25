@@ -35,10 +35,13 @@
 
 最初の画面でアプリの説明を行っています(React.js)
 ![アプリ説明](https://i.gyazo.com/06817240b3c4a103d5c83574b0124574.gif)
+
 エクセル出力可能
 ![入力画面](https://i.gyazo.com/579f46a9561152d6e64d695de6bff46c.png)
+
 入力欄の下には、科目説明もあります。勘定科目が分からなくなったら見てください。
 ![科目説明](https://i.gyazo.com/7b7026bac132dc45f1593bacb3e1515d.gif)
+
 確定申告の際に必要な資料が作成されます。
 ![損益計算書](https://i.gyazo.com/65a70398397d46f941ac5c802ae8d57f.png)
 
@@ -60,7 +63,7 @@
 - インフラ
 
   - MySQL 8.0.23
-  - AWS(EC2, ROS, Route53, IAM, ELB)
+  - AWS(EC2, RDS, Route53, IAM, ELB(ALB), AutoScaling,S3)
 
 - テスト(単体テスト・結合テスト)
 

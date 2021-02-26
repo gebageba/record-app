@@ -63,7 +63,8 @@
 - インフラ
 
   - MySQL 8.0.23
-  - AWS(EC2, RDS, Route53, IAM, ELB(ALB), AutoScaling,S3)
+  - AWS(EC2, RDS, Route53, IAM, ELB(ALB), AutoScaling, S3)
+    マルチ AZ, 冗長化, sorry ページの作成
 
 - テスト(単体テスト・結合テスト)
 

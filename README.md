@@ -59,11 +59,10 @@
   - Rails 6.1.3
   - Ruby 2.6.3
 
-- インフラ
+- インフラ(冗長化構成)
 
   - MySQL 8.0.23
-  - AWS(EC2, RDS, Route53 フェイルオーバー(sorry ページ), IAM, ELB(ALB), AutoScaling, S3)  
-    マルチ AZ, 冗長化
+  - AWS(マルチ AZ, EC2, RDS, Route53 フェイルオーバー(sorry ページ), IAM, ELB(ALB), AutoScaling, S3)
 
 - テスト(単体テスト・結合テスト)
 

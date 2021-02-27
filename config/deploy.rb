@@ -32,4 +32,4 @@ namespace :deploy do
  end
 end
 
-set :linked_files, %w{/var/www/record-app/config/master.key}
+append :linked_files, "config/master.key"

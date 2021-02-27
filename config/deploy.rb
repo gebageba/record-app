@@ -32,4 +32,4 @@ namespace :deploy do
  end
 end
 
-append :linked_files, 'config/credentials/production.key'
+set :linked_files, %w{config/master.key}

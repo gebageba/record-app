@@ -31,3 +31,5 @@ namespace :deploy do
    invoke 'unicorn:restart'
  end
 end
+
+append :linked_files, 'config/credentials/production.key'

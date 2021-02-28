@@ -21,8 +21,8 @@
 
 ### URL
 
-https://cash.record-for-kakutei.ml
-テスト用 メールアドレス: sample@sample.cpm
+https://cash.record-for-kakutei.ml  
+テスト用 メールアドレス: sample@sample.cpm  
 パスワード : sample
 
 ### 想定している人

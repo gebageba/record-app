@@ -21,7 +21,9 @@
 
 ### URL
 
-テスト用アカウント:
+https://cash.record-for-kakutei.ml
+テスト用 メールアドレス: sample@sample.cpm
+パスワード : sample
 
 ### 想定している人
 
@@ -62,9 +64,9 @@
 - インフラ(冗長化構成)
 
   - MySQL 8.0.23
-  - AWS(マルチ AZ, EC2, RDS, Route53 フェイルオーバー(sorry ページ), IAM, ELB(ALB), Amazon CloudWatch(CPU70%以上、CPU30%以下), AutoScaling, S3)
+  - AWS(マルチ AZ, EC2, RDS, Route53, IAM, ELB(ALB), CloudWatch(CPU70%以上、CPU30%以下), AutoScaling, S3(sorry ページ))
 
-    現在は、無料枠を超える恐れがあるため、EC2 一つと RDS のマスター 一つで運転中です。
+  なお現在は、EC2 一つと RDS のマスター 一つで運転中です。(無料枠を使用しているため)
 
 - テスト(単体テスト・結合テスト)
 

@@ -21,5 +21,6 @@ module RecordApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << ".record-for-kakutei.ml"
+    config.hosts << "ap-northeast-1.elb.amazonaws.com"
   end
 end

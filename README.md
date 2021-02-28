@@ -37,7 +37,7 @@ https://cash.record-for-kakutei.ml
 最初の画面でアプリの説明を行っています(React.js)
 ![アプリ説明](https://i.gyazo.com/06817240b3c4a103d5c83574b0124574.gif)
 
-エクセル出力可能
+ログイン後、入力画面(エクセル出力可能)
 ![入力画面](https://i.gyazo.com/579f46a9561152d6e64d695de6bff46c.png)
 
 入力欄の下には、科目説明もあります。勘定科目が分からなくなったら見てください。
@@ -64,7 +64,7 @@ https://cash.record-for-kakutei.ml
 - インフラ(冗長化構成)
 
   - MySQL 8.0.23
-  - AWS(マルチ AZ, EC2, RDS, Route53, IAM, ELB(ALB), CloudWatch(CPU70%以上、CPU30%以下), AutoScaling, S3(sorry ページ))
+  - AWS(マルチ AZ, EC2, RDS, Route53, IAM, ELB(ALB), CloudWatch, AutoScaling, S3(sorry ページ))
 
   なお現在は、EC2 一つと RDS のマスター 一つで運転中です。(無料枠を使用しているため)
 
@@ -77,9 +77,9 @@ https://cash.record-for-kakutei.ml
 
 ## AWS 構成図
 
-![AWS構成図](https://i.gyazo.com/5e52d3323258c60d5593b5de84211b15.png)
+![AWS構成図](https://i.gyazo.com/feb77416a7b524df752a5c2db60d9ad2.png)
 
-Sorry ページ
+Route53 フェイルオーバールーティング　セカンダリ Sorry ページ
 ![Sorryページ](https://i.gyazo.com/22766d5bd05106d8fd36d18803d75127.png)
 
 ## 機能一覧

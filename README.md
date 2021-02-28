@@ -62,7 +62,9 @@
 - インフラ(冗長化構成)
 
   - MySQL 8.0.23
-  - AWS(マルチ AZ, EC2, RDS, Route53 フェイルオーバー(sorry ページ), IAM, ELB(ALB), AutoScaling, S3)
+  - AWS(マルチ AZ, EC2, RDS, Route53 フェイルオーバー(sorry ページ), IAM, ELB(ALB), Amazon CloudWatch(CPU70%以上、CPU30%以下), AutoScaling, S3)
+
+    現在は、無料枠を超える恐れがあるため、EC2 一つと RDS のマスター 一つで運転中です。
 
 - テスト(単体テスト・結合テスト)
 
@@ -76,7 +78,7 @@
 ![AWS構成図](https://i.gyazo.com/5e52d3323258c60d5593b5de84211b15.png)
 
 Sorry ページ
-![Sorryページ]()
+![Sorryページ](https://i.gyazo.com/22766d5bd05106d8fd36d18803d75127.png)
 
 ## 機能一覧
 

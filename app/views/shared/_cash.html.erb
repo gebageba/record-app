@@ -1,3 +1,4 @@
+ <%# 総勘定元帳の現金 %>
  <table class="main">
   <thead>
     <tr><h2></h2>
@@ -24,17 +25,23 @@
      <% sum = 0%>
       <% @records.each.with_index do |record, i| %>
         <tr>
+          <%# 日付 %>
           <td><%= record.date %></td>
+          <%# 科目名 %>
           <td><%= record.subject.name %></td>
+          <%# 摘要 %>
           <td><%= record.memo %></td>
+          <%# 借方金額 %>
           <td><% if record.subject_id >= 100%>
                 <%= record.price %></td>
               <%end%>
           </td>
+          <%# 貸方金額 %>
           <td><% if record.subject_id < 100%>
                 <%= record.price %></td>
               <%end%>
           </td>
+          <%# 残高 %>
           <td><% if record.subject_id >= 100%>
                   <%= sum += @records.pluck("price")[i].to_i%></td>
               <% else %>

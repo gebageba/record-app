@@ -1,9 +1,10 @@
+<%# ヘッダー %>
 <html>
 
 <body class="menu">
     <header>    
         
-        <!-- ナビメニュー -->
+        <%# ナビメニュー %>
         <nav id="nav">
             <ul>
                 <li><%= link_to '入力(出力可)', new_record_path %></li>
@@ -17,13 +18,13 @@
             </ul>
         </nav>
 
-        <!-- ハンバーガーメニューのアイコン -->
+        <%# ハンバーガーメニューのアイコン %>
         <div id="hamburger">
-            <!-- 線1 -->
+            <%# 線1 %>
             <span class="inner_line" id="line1"></span>
-            <!-- 線2 -->
+            <%# 線2 %>
             <span class="inner_line" id="line2"></span>
-            <!-- 線3 -->
+            <%# 線3 %>
             <span class="inner_line" id="line3"></span>
         </div>
         <div class="subject"><%= title%></div>
@@ -31,11 +32,8 @@
 
 
 
-
+        <%# 各ボタン %>
         <div id="menu">
-            <%# <div class="logo">
-                <a href="/">ロゴ</a>
-            </div> %>
             <div class="link-header">
                 <ul id="nav-header">
                     <% if user_signed_in?%>
@@ -62,13 +60,6 @@
                 </ul>
             </div>     
         </div>
-
-
-        
-
-
-
-
 
     </header>
         <div class="space"></div>

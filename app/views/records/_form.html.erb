@@ -1,31 +1,37 @@
 <%= form_with(model: record) do |form| %>
 
 <form>
+  <%# 日付 %>
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :日付 %>
     <%= form.date_field :date, {class: 'form_style'} %>
   </div>
 
+  <%# メモ %>
   <div class="field">
-    <%= form.label :memo %>
+    <%= form.label :摘要 %>
     <%= form.text_area :memo, {class: 'form_style'} %>
   </div>
 
+  <%# 科目(ActiveModel) %>
   <div class="field">
-    <%= form.label :subject %>
+    <%= form.label :科目 %>
     <%= form.collection_select :subject_id, Subject.all, :id, :name, {},{class: 'form_fixed'} %>
   </div>
 
+  <%# 金額 %>
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :金額 %>
     <%= form.number_field :price, {class: 'form_fixed'} %>
   </div>
 
+  <%# 詳細 %>
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label :詳細 %>
     <%= form.text_area :detail, {class: 'form_style'} %>
   </div>
 
+  <%# 追加ボタン %>
   <div class="actions">
     <%= form.submit "追加", {class: 'form_action'} %>
   </div>

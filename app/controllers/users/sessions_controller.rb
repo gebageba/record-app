@@ -19,7 +19,7 @@ module Users
     #   super
     # end
 
-
+  # ゲストログイン
   def new_guest
     user = User.guest
     sign_in user

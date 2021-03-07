@@ -1,12 +1,13 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
 
+<%# 経費帳 %>
 <div class="main-wrap">
 <table class="main">
   <thead>
     <tr>
       <th>日付</th>
       <th>摘要</th>
-      <th>種類</th>
+      <th>科目</th>
       <th>支払方法</th>
       <th>支払金額</th>
       <th>合計</th>
@@ -18,11 +19,16 @@
     <% sum = 0%>
     <% @records.each.with_index do |record, i| %>
       <tr>
+        <%# 日付 %>
         <td><%= record.date %></td>
+        <%# 摘要 %>
         <td class="memo"><%= record.memo %></td>
+        <%# 科目 %>
         <td><%= record.subject.name %></td>
         <td>現金</td>
+        <%# 支払い金額 %>
         <td><%= record.price %></td>
+        <%# 合計 %>
         <td><%= sum += @price[i].to_i%></td>
         <td><%= link_to '詳細', record%></td>
         <% end %>

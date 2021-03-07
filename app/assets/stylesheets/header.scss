@@ -1,5 +1,5 @@
 :root {
-  /*color*/
+  /*カラー*/
   --header: #f0f0f0;
   --nav: #ffffff;
   --nav-a: #000000;
@@ -124,7 +124,7 @@ div#hamburger {
   display: none;
 }
 
-/* JavaScriptの動き */
+/* JavaScriptの動き(メニューバー) */
 .in {
   transform: translateX(100%);
 }

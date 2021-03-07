@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import explain from "./Second";
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 
 const Review = () => {
     const [index,setIndex] = useState(1);

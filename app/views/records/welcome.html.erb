@@ -1,47 +1,4 @@
-<h2>確定申告用　帳簿作成アプリ</h2>
-
-<hr color="green">
-
-<div id="menu">
-            <%# <div class="logo">
-                <a href="/">ロゴ</a>
-            </div> %>
-            <div class="link">
-                <ul id="nav-header">
-                    <% if user_signed_in?%>
-                        <div id="header-email">
-                        <li><%= current_user.email%></li>
-                        </div>
-                        <div id="login">
-                            <button class="form_explain" type="button">
-                                <li>
-                                    <%= link_to "ログアウト", destroy_user_session_path, :method => :delete%>
-                                </li>
-                            </button>
-                            <button class="form_explain" type="button">
-                                <li>
-                                    <%= link_to "戻る", new_record_path%>
-                                </li>
-                            </button>
-                        </div>
-                    <% else %>
-                            <div id="login">
-                                <button class="form_explain" type="button">
-                                <li>
-                                    <%= link_to "ログイン", new_user_session_path%>
-                                </li>
-                                </button>
-                                <button class="form_explain" type="button">
-                                <li>
-                                    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
-                                </li>
-                                </button>
-                            </div>
-                    <% end %>
-                </ul>
-            </div>     
-        </div>
-
+<%# アプリ説明 %>
 
 <!DOCTYPE html>
 <html>
@@ -49,6 +6,48 @@
     <meta charset="utf-8">
 </head>
 <body>
+
+    <h2>確定申告用　帳簿作成アプリ</h2>
+
+    <hr color="green">
+    <%# ヘッダー %>
+    <div id="menu">
+        <div class="link">
+            <ul id="nav-header">
+                <% if user_signed_in?%>
+                    <div id="header-email">
+                    <li><%= current_user.email%></li>
+                    </div>
+                    <div id="login">
+                        <button class="form_explain" type="button">
+                            <li>
+                                <%= link_to "ログアウト", destroy_user_session_path, :method => :delete%>
+                            </li>
+                        </button>
+                        <button class="form_explain" type="button">
+                            <li>
+                                <%= link_to "戻る", new_record_path%>
+                            </li>
+                        </button>
+                    </div>
+                <% else %>
+                        <div id="login">
+                            <button class="form_explain" type="button">
+                            <li>
+                                <%= link_to "ログイン", new_user_session_path%>
+                            </li>
+                            </button>
+                            <button class="form_explain" type="button">
+                            <li>
+                                <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
+                            </li>
+                            </button>
+                        </div>
+                <% end %>
+            </ul>
+        </div>     
+    </div>
+    <%# ここまでヘッダー %>
     <div id="root"></div>
     <%= javascript_pack_tag 'index' %> 
 </body>

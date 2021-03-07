@@ -10,6 +10,8 @@
   --notice: green;
   --error: red;
   --all-background-color: #f0f0f0;
+  --white: #ffffff;
+  --font-black: #333;
 }
 
 *,
@@ -40,7 +42,7 @@ pre {
 }
 
 a {
-  color: #000;
+  color: var(--font-black);
 }
 
 a:visited {
@@ -48,10 +50,10 @@ a:visited {
 }
 
 a:hover {
-  color: #fff;
-  background-color: #000;
+  color: var(--white);
+  background-color: var(--font-black);
 }
-
+/*テーブル*/
 table {
   width: 80vw;
   border-top: 1px solid var(--table);
@@ -81,7 +83,7 @@ table {
 th {
   padding-bottom: 5px;
   border-right: 1px solid var(--table);
-  color: #ffffff;
+  color: var(--white);
   background-color: var(--table);
   border-bottom: 1px solid var(--table);
   padding: 0.3em 1em;
@@ -102,6 +104,10 @@ tr:nth-child(even) {
 td.memo {
   width: 30%;
 }
+
+/*ここまでテーブル*/
+
+/*フォームボタン*/
 
 div.field,
 div.actions {
@@ -155,7 +161,7 @@ form {
   cursor: pointer;
   padding: 12px 12px;
   background: var(--table);
-  color: #ffffff;
+  color: var(--white);
   transition: 0.3s; /* なめらか変化 */
   border: 2px solid var(--table);
   border-radius: 14%;
@@ -163,9 +169,12 @@ form {
 
 .form_action:hover {
   color: var(--table);
-  background: #ffffff;
+  background: var(--white);
 }
 
+/*ここまでフォームボタン*/
+
+/*エラー*/
 #notice {
   color: var(--notice);
 }
@@ -190,20 +199,21 @@ form {
   font-size: 12px;
   margin: -7px -7px 0;
   background-color: #c00;
-  color: #fff;
+  color: var(--white);
 }
 
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
+/*ここまでエラー*/
 
 label {
   display: block;
 }
 
 .right {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 .left {
   background-color: var(--table-even);
@@ -229,7 +239,7 @@ label {
   margin-top: 20px;
 }
 .tab-label {
-  color: black;
+  color: var(--font-black);
   background: var(--table-even);
   margin: 3px 5px;
   padding: 3px 12px;
@@ -250,6 +260,7 @@ label {
   display: none;
 }
 
+/*フッター*/
 footer {
   width: 100%;
   text-align: center;

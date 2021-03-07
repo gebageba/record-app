@@ -27,6 +27,31 @@ class RecordsController < ApplicationController
     @title = '編集'
   end
 
+  def create
+    @record = Record.new(record_params)
+    @record.user_id = current_user.id
+
+    if @record.save
+      redirect_to new_record_path, notice: '追加されました'
+    else
+      render new_record
+    end
+  end
+
+  def update
+    if @record.update(record_params)
+      redirect_to new_record_path, notice: '更新が完了しました'
+    else
+      render new_record_path
+    end
+  end
+
+  def destroy
+    redirect_to new_record_path, notice: '削除が完了しました' if @record.destroy
+  end
+
+  def welcome; end
+
   def expence
     @title = '経費帳'
     @price = @records.pluck('price')
@@ -59,31 +84,6 @@ class RecordsController < ApplicationController
     @debt = @records[101].to_i + @records[102].to_i + @pl
     @title = '貸借対照表'
   end
-
-  def create
-    @record = Record.new(record_params)
-    @record.user_id = current_user.id
-
-    if @record.save
-      redirect_to new_record_path, notice: '追加されました'
-    else
-      render new_record
-    end
-  end
-
-  def update
-    if @record.update(record_params)
-      redirect_to new_record_path, notice: '更新が完了しました'
-    else
-      render new_record_path
-    end
-  end
-
-  def destroy
-    redirect_to new_record_path, notice: '削除が完了しました' if @record.destroy
-  end
-
-  def welcome; end
 
   private
 

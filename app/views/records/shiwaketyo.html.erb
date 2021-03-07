@@ -1,5 +1,6 @@
 <%= render partial: "shared/header", locals: { title: @title }%>
 
+<%# 仕訳帳 %>
 <div class="main-wrap">
  <table class="main">
   <thead>
@@ -17,21 +18,25 @@
   <% sum = 0%>
       <% @records.each.with_index do |record, i| %>
         <tr>
+          <%# 日付 %>
           <td><%= record.date %></td>
+          <%# 適用 %>
           <td><%= record.memo %></td>
+          <%# 借方科目 %>
           <td><% if record.subject_id < 100%>
                 <%= record.subject.name %></td>
               <% else %>
                 現金
               <%end%>
           </td>
+          <%# 貸方科目 %>
           <td><% if record.subject_id >= 100%>
                 <%= record.subject.name %>
               <% else %>
                 現金
               <%end%>
               </td>
-         
+          <%# 金額 %>
           <td><%= record.price %></td>
 
           <td><%= link_to '詳細', record%></td>

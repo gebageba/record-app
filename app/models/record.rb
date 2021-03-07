@@ -9,8 +9,10 @@ class Record < ApplicationRecord
   def user
     User.find_by(id: user_id)
   end
-
+# 日付順に並べ替える
   scope :sorted, -> { order(date: :asc) }
+# 経費
   scope :expence, -> { where(subject_id: [1..99]) }
+# 収入
   scope :income, -> { where(subject_id: [100..102]) }
 end

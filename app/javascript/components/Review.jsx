@@ -6,6 +6,7 @@ const Review = () => {
     const [index,setIndex] = useState(1);
     const {name,job,image,text} = explain[index];
 
+    // indexが人の数に合うようにする
     const checkNumber = (number) => {
       if (number > explain.length - 1){
         return 0
@@ -16,12 +17,15 @@ const Review = () => {
       return number;
     };
 
+     // onClickでの関数(indexが1大きくなる)
     const nextExplain = () => {
       setIndex((index)=> {
           let newIndex = index + 1;
           return checkNumber(newIndex);
       });
     };
+    
+     // onClickでの関数(indexが1小さくなる)
     const prevExplain = () => {
       setIndex((index)=> {
           let newIndex = index - 1;

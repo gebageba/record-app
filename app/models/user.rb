@@ -11,4 +11,10 @@ class User < ApplicationRecord
   def records
     Record.where(user_id: id)
   end
+
+  def self.guest
+    find_by(email: 'sample@sample.com') do |user|
+      user.password = SecureRandom.urlsafe_base6
+    end
+  end
 end

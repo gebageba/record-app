@@ -19,6 +19,13 @@ module Users
     #   super
     # end
 
+
+  def new_guest
+    user = User.guest
+    sign_in user
+    redirect_to new_record_path, notice: 'ゲストユーザーとしてログインしました'
+  end
+
     # protected
 
     # If you have extra params to permit, append them to the sanitizer.

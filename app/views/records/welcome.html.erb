@@ -25,13 +25,18 @@
                             </button>
                         </div>
                     <% else %>
-                        <button class="form_explain" type="button">
                             <div id="login">
+                                <button class="form_explain" type="button">
                                 <li>
                                     <%= link_to "ログイン", new_user_session_path%>
                                 </li>
+                                </button>
+                                <button class="form_explain" type="button">
+                                <li>
+                                    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
+                                </li>
+                                </button>
                             </div>
-                        </button>
                     <% end %>
                 </ul>
             </div>     
